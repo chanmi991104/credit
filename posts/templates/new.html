@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3> 수강학기 입력하기 </h3>
+<form method='POST'>
+    {% csrf_token %}
+    <select name="time" size="1">
+        <option value="1-1" selected>1학년 1학기</option>
+        <option value="1-2" >1학년 2학기</option>
+        <option value="2-1">2학년 1학기</option>
+        <option value="2-2">2학년 2학기</option>
+        <option value="3-1">3학년 1학기</option>
+        <option value="3-2">3학년 2학기</option>
+        <option value="4-1">4학년 1학기</option>
+        <option value="4-2">4학년 2학기</option>
+    </select>
+    <input type="submit" value="학기 입력하기" />
+</form>
+</body>
+</html>
