@@ -5,9 +5,11 @@
     <title>Title</title>
 </head>
 <body>
+
 <h3> 성적 입력하기 </h3>
 <form method='POST'>
     {% csrf_token %}
+    <input type="hidden" name="time" value="{{ post.time }}">
     수업 명: <input type="text" name="title">
     학점:
     <select name="credit" size="1">
@@ -28,7 +30,26 @@
         <option value="1.0">D</option>
         <option value="0">F</option>
     </select>
-    <input type="submit" value="과목명 입력하기" />
-</form>
+    <input type="submit" value="입력하기"/>
+</form><br/>
+<h2> {{ post.time }} </h2>
+<table border="2">
+    <tr>
+        <th>  수업명  </th>
+        <th>  학점  </th>
+        <th>  성적  </th>
+    </tr>
+    {% for credit in credits %}
+        <tr>
+            <td>{{ credit.title }}</td>
+            <td>{{ credit.credit }}</td>
+            <td>{{ credit.grade }}</td>
+        </tr>
+    {% endfor %}
+    <tr>
+        <td colspan = '2'>평점평균</td>
+        <td>{{ score }}</td>
+    </tr>
+</table>
 </body>
 </html>

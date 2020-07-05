@@ -9,4 +9,4 @@ class PostForm(forms.ModelForm):
 class CreditForm(forms.ModelForm):
     class Meta:
         model = Credit
-        fields = ['title','credit','grade']
+        fields = ['title','credit','grade','time']

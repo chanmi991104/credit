@@ -24,5 +24,5 @@ urlpatterns = [
     path('list/', posts.views.postlist, name='postlist'),
     path('new/', posts.views.new, name='new'),
     path('postcreate/', posts.views.postcreate, name='postcreate'),
-    #path('post/', include('post.urls')),
+    path('posts/', include('posts.urls')),
 ]
